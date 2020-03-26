@@ -4,10 +4,11 @@ local-path-extra = /Applications/Pd-0.48-1.app/Contents/Resources/extra
 #location of dependencies
 uutil-url = https://github.com/evie-writes-code/uutil.git
 uoscil-url = https://github.com/evie-writes-code/uoscil.git
+ufilter-url = https://github.com/evie-writes-code/ufilter.git
 
 all: dependencies
 
-dependencies: $(local-path-extra)/uutil $(local-path-extra)/uoscil
+dependencies: $(local-path-extra)/uutil $(local-path-extra)/uoscil $(local-path-extra)/ufilter
 
 #clones necessary libraries and updates them if necessary
 $(local-path-extra)/uutil: 
@@ -20,4 +21,10 @@ $(local-path-extra)/uoscil:
 	git clone $(uoscil-url) $(local-path-extra)/uoscil
 	cd $(local-path-extra)/uoscil
 	git remote add upstream $(uoscil-url)
+	git pull upstream master
+
+$(local-path-extra)/ufilter:
+	git clone $(ufilter-url) $(local-path-extra)/ufilter
+	cd $(local-path-extra)/ufilter
+	git remote add upstream $(ufilter-url)
 	git pull upstream master
