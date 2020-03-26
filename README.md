@@ -1,2 +1,2 @@
 # uinstrument
-ulrike's pure data patch libraries, filters
+ulrike's pure data patch libraries, instruments.
